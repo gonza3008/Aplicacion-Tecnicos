@@ -1,5 +1,9 @@
-export 'package:prueba_de_proyecto/screens/devices_screen.dart';
-export 'package:prueba_de_proyecto/screens/bluetooth_screen.dart';
-export 'package:prueba_de_proyecto/screens/home_screen.dart';
-export 'package:prueba_de_proyecto/screens/login_screen.dart';
-export 'package:prueba_de_proyecto/screens/logout_screen.dart';
+export 'package:app_tecnicos/screens/chat_page.dart';
+export 'package:app_tecnicos/screens/select_devices_chat.dart';
+export 'package:app_tecnicos/screens/discovery_devices.dart';
+export 'package:app_tecnicos/screens/devices_screen.dart';
+export 'package:app_tecnicos/screens/bluetooth_screen.dart';
+export 'package:app_tecnicos/screens/home_screen.dart';
+export 'package:app_tecnicos/screens/login_screen.dart';
+export 'package:app_tecnicos/screens/logout_screen.dart';
+

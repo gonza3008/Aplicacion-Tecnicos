@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:prueba_de_proyecto/screens/screens.dart';
-import 'package:prueba_de_proyecto/services/services.dart';
+import 'package:app_tecnicos/screens/screens.dart';
+import 'package:app_tecnicos/services/services.dart';
 
 void main() => runApp(const AppState());
 
@@ -10,16 +10,11 @@ class AppState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AuthService()),
-      ],
-      child: const MyApp()
-    );
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => AuthService()),
+    ], child: const MyApp());
   }
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -31,12 +26,10 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       initialRoute: 'home',
       routes: {
-       'login': (_)=> const LoginScreen(),
-       'home' : (_)=> const HomeScreen(),
-      }, 
-      theme: ThemeData.light().copyWith(
-        scaffoldBackgroundColor: Colors.white
-      ),
+        'login': (_) => const LoginScreen(),
+        'home': (_) => const HomeScreen(),
+      },
+      theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
     );
   }
 }

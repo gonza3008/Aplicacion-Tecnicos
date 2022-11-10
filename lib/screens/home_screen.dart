@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba_de_proyecto/screens/screens.dart';
+import 'package:app_tecnicos/screens/screens.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,14 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: Colors.deepPurple,
-        title: const Center(child: Text('Device Setter')),
+        title: const Center(child: Text('Devices')),
       ),
       body: PageView(
         controller: pageController,
         /*Paginas a las cuales navegar */
         children: const [
           DeviceScreen(),
-          BluetoothScreen(),
+          BluetoothScreen(title: 'Bluetooth',),
           LogoutScreen(),
         ],
       ),

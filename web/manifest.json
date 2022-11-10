@@ -1,6 +1,6 @@
 {
-    "name": "prueba_de_proyecto",
-    "short_name": "prueba_de_proyecto",
+    "name": "app_tecnicos",
+    "short_name": "app_tecnicos",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
