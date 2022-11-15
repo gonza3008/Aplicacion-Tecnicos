@@ -5,5 +5,5 @@ export 'package:app_tecnicos/screens/devices_screen.dart';
 export 'package:app_tecnicos/screens/bluetooth_screen.dart';
 export 'package:app_tecnicos/screens/home_screen.dart';
 export 'package:app_tecnicos/screens/login_screen.dart';
-export 'package:app_tecnicos/screens/logout_screen.dart';
+
 

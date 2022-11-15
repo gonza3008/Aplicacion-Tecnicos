@@ -14,8 +14,39 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void onTapped(int index) {
     setState(() => {_selectedIndex = index});
-    pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 500), curve: Curves.ease);
+
+    if (index == 2) {//Si presiono el icono de Log Out 
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Desea salir de la aplicacion?"),
+          content: const Text("Presione Si para salir."),
+          actions: [
+            ElevatedButton(
+              style: const ButtonStyle(backgroundColor:  MaterialStatePropertyAll<Color>(Colors.deepPurple)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: ((context) => const LoginScreen())));
+              },
+              child: const Text("Si")
+            ),
+            ElevatedButton(
+              style: const ButtonStyle(backgroundColor:  MaterialStatePropertyAll<Color>(Colors.deepPurple)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("Cancel")
+            ),
+          ],
+        )
+        ).then((value) => print(value));
+
+    } else {
+      pageController.animateToPage(index,
+          duration: const Duration(milliseconds: 500), curve: Curves.ease);
+    }
   }
 
   @override
@@ -31,8 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
         /*Paginas a las cuales navegar */
         children: const [
           DeviceScreen(),
-          BluetoothScreen(title: 'Bluetooth',),
-          LogoutScreen(),
+          BluetoothScreen(
+            title: 'Bluetooth',
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

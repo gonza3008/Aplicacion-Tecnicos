@@ -1,3 +1,7 @@
+import 'package:app_tecnicos/devices_screens/gv300_screen.dart';
+import 'package:app_tecnicos/devices_screens/ican_screen.dart';
+import 'package:app_tecnicos/devices_screens/trax_screen.dart';
+import 'package:app_tecnicos/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DeviceScreen extends StatelessWidget {
@@ -6,73 +10,17 @@ class DeviceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Text(
-                'Seleccione un dispositivo',
-                style: TextStyle(fontSize: 20),
-              )
-            ],
-          ),
-        ),
-
-        //Primera carta
-        Expanded(
-            child: Row(
+        body: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.red,
-                image: ('lib/assets/ican.jpg'),
-              ),
-              margin: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, bottom: 10, top: 20),
-            )),
-            //segunda carta
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.yellow),
-              margin: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, bottom: 10, top: 20),
-            ))
+            const CustomCard(name: 'ICAN', image: 'assets/ican.jpg', screenWidget: IcanScreen()),
+            const SizedBox(height: 20),
+            const CustomCard(name: 'TRAX', image: 'assets/Trax.jpg', screenWidget: TraxScreen()),
+            const SizedBox(height: 20),
+            const CustomCard(name: 'GV300', image: 'assets/GV300.jpg', screenWidget: GV300Screen()),
           ],
-        )),
-
-        /*NUEVA FILA */
-        Expanded(
-            child: Row(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blue),
-              margin: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, bottom: 10, top: 20),
-            )),
-            //segunda carta
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.green),
-              margin: const EdgeInsets.only(
-                  left: 10.0, right: 10.0, bottom: 10, top: 20),
-            ))
-          ],
-        )),
-      ],
-    ));
+        )
+    );
   }
 }

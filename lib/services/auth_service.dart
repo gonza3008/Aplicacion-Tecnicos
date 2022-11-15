@@ -14,6 +14,8 @@ class AuthService extends ChangeNotifier {
 
     print('Peticion realizada a: $url');
     var response = await http.get(url);
+    
+
 
     if (response.statusCode == 200) {
       print('Todo en orden pasa');
